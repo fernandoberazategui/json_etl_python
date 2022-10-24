@@ -59,27 +59,27 @@ if __name__ == '__main__':
         
     titulos_completados = [user['userId'] if user['completed'] == True else 0 for user in data]
 
-    usuarios = []
+    lista_usuarios = []
 
     lista_titulos = []
     
 
     for i in range(1,11):
 
-        print('El usuario',i, 'ha completado ', titulos_completados.count(i), 'títulos')
-
-        usuario = str(i)
-        usuarios.append(usuario)
+        #print('El usuario',i, 'ha completado ', titulos_completados.count(i), 'títulos')
+        
+        lista_usuarios.append(i)
 
         
         titulos = titulos_completados.count(i)
         lista_titulos.append(titulos)
 
-    print(usuarios, lista_titulos)
+    print(lista_usuarios) 
+    print(lista_titulos)
 
     
 
-    #Voy a crear el gráfico con las dos listas
+    #Voy a crear el gráfico con las dos listas: lista_titulo y lista_usuarios
     
     
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     ax = fig.add_subplot()
 
 
-    ax.bar(usuarios, lista_titulos, label='Títulos')
+    ax.bar(lista_usuarios, lista_titulos, label='Títulos')
     ax.set_facecolor('whitesmoke')
     ax.legend()
     plt.show()
